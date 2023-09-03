@@ -31,6 +31,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
 
+       loadRandomQuote();
+
+        binding.btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadRandomQuote();
+            }
+        });
+    }
+
+    private void loadRandomQuote() {
+
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.quotable.io/")
                 .addConverterFactory(GsonConverterFactory.create())
