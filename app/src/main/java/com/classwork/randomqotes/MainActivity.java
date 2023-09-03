@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
 
-       loadRandomQuote();
+        loadRandomQuote();
 
         binding.btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     ApiResponse apiResponse = response.body();
                     binding.quotesofbook.setText(apiResponse.getContent());
-                    binding.authorofbook.setText(apiResponse.getAuthor());
+                    binding.authorofbook.setText("- " + apiResponse.getAuthor());
                 }
             }
 
